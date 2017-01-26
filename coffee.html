@@ -48,8 +48,18 @@
 
     // Set these variables to their DOM elements
 
-    var myImage;
-    var myRevenueMessage;
+    var myImage = document.getElementById("coffee-image");
+    var myRevenueMessage = document.getElementById("revenue");
+
+    myImage.setAttribute('src', 'static/coffee_beans.jpg');
+
+    var makeCoffee = function () {
+        myImage.setAttribute('src', 'static/coffee_mug.jpg');
+    };
+
+    myImage.addEventListener('click', makeCoffee);
+
+
 
     // use this JavaScript object in further study step
 
