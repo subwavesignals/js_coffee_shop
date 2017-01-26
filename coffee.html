@@ -54,11 +54,17 @@
     myImage.setAttribute('src', 'static/coffee_beans.jpg');
 
     var makeCoffee = function () {
-        myImage.setAttribute('src', 'static/coffee_mug.jpg');
+        myImage.setAttribute('src', 'static/coffee_machine.jpg');
+        setTimeout(function () {
+            myImage.setAttribute('src', 'static/coffee_mug.jpg');
+            }, 1500);
+        setTimeout(function () {
+            myImage.setAttribute('src', 'static/coffee_beans.jpg');
+            }, 4000);
     };
 
-    myImage.addEventListener('click', makeCoffee);
 
+    myImage.addEventListener('click', makeCoffee);
 
 
     // use this JavaScript object in further study step
