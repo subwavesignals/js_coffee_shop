@@ -57,7 +57,7 @@
 
     var makeCoffee = function (drinkType) {
         drinksOrdered.push(drinkType);
-        console.log(drinksOrdered);
+        // console.log(drinksOrdered);
 
         myImage.setAttribute('src', 'static/coffee_machine.jpg');
         setTimeout(function () {
@@ -66,6 +66,8 @@
         setTimeout(function () {
             myImage.setAttribute('src', 'static/coffee_beans.jpg');
             }, 4000);
+
+        myRevenueMessage.innerHTML = ("$" + revenue(drinksOrdered).toFixed(2));
     };
 
 
@@ -99,6 +101,19 @@
         "hot chocolate": 2.50
     };
 
+    var revenue = function () {
+        var daily_total = 0;
+
+        for (drink of drinksOrdered) {
+            if (drink == "hot-chocolate") {
+                drink = "hot chocolate";
+            };
+            daily_total += prices[drink];
+            console.log(daily_total);
+        };
+
+        return daily_total;
+    };
 
 </script>
 
